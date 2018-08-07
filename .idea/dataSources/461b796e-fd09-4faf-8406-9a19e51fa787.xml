@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="hibernate">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="alix"/>
+    <schema id="4" parent="1" name="book"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="world"/>
+    <table id="11" parent="2" name="mytest"/>
+    <table id="12" parent="2" name="student_listofaddresses"/>
+    <column id="13" parent="11" name="number">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="11" name="UserName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="15" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>number</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="16" parent="12" name="Student_number">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="12" name="city_Name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="18" parent="12" name="pincode">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="12" name="State_Name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="20" parent="12" name="Street_Name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="21" parent="12" name="FKo9jmbr0byb5kicc37hav7i7bt">
+      <ColNames>Student_number</ColNames>
+    </index>
+    <foreign-key id="22" parent="12" name="FKo9jmbr0byb5kicc37hav7i7bt">
+      <ColNames>Student_number</ColNames>
+      <RefSchemaName>hibernate</RefSchemaName>
+      <RefTableName>mytest</RefTableName>
+      <RefColNames>number</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
