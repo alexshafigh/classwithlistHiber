@@ -5,13 +5,13 @@ import javax.persistence.Embedded;
 @Embeddable
 public class Address {
 
-    @Column (name = "Street_Name")
+    @Column (name = "Student_Street_Name")
     private String street;
-    @Column (name = "city_Name")
+    @Column (name = "Student_city_Name")
     private String city;
-    @Column (name = "State_Name")
+    @Column (name = "Student_State_Name")
     private String state;
-    @Column (name = "pincode")
+    @Column (name = "Student_pincode")
     private String pincode;
 
     public String getStreet() {

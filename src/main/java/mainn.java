@@ -25,7 +25,7 @@ public class mainn {
             student.getListofAddresses().add(home_address);
             student.getListofAddresses().add(office_address);
 
-
+//
                 SessionFactory factory = null;
                 Session session = null;
 
@@ -35,7 +35,9 @@ public class mainn {
                 session = factory.openSession();
                 session.beginTransaction();
                 session.save(student);
+//                Student sstudent = session.get(Student.class ,831461324 );
                 session.getTransaction().commit();
+//                System.out.println(student.getUserName());
                 session.close();
 //                factory.close();
 

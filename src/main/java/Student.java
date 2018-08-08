@@ -1,21 +1,24 @@
 import org.hibernate.annotations.CollectionId;
 import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
-@Table (name = "MYTEST")
+//@Table (name = "MYTEST")
 public class Student {
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int number;
-
     private String UserName;
-
     @ElementCollection
-    private Set<Address> listofAddresses = new HashSet<Address>();
+    @JoinTable(name = "STUDENT_ADDRESS" ,
+            joinColumns = @JoinColumn(name = "Student_ID")
+   )
+    @GenericGenerator(name="increment-gen",strategy="increment")
+    @CollectionId(columns = {@Column(name = "ADDRESS_ID")},generator = "increment-gen" , type =@Type( type = "long"))
+    private Collection<Address> listofAddresses = new ArrayList<Address>();
 
     public Student() {
     }
@@ -36,7 +39,7 @@ public class Student {
         UserName = userName;
     }
 
-    public Set<Address> getListofAddresses() {
+    public Collection<Address> getListofAddresses() {
         return listofAddresses;
     }
 
